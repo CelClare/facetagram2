@@ -1,0 +1,14 @@
+{% extends 'navbar.html.twig' %}
+{% form_theme formProduct 'bootstrap_4_layout.html.twig' %}
+
+{% block stylesheets %}
+{{ parent() }}
+<link href="{{asset('/css/style.css')}}" rel="stylesheet" media="all">
+{% endblock %}
+
+{% block contenuPrincipal %}
+    {{parent()}}
+
+{{ form(formProduct) }}
+
+{% endblock %}

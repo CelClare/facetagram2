@@ -1,0 +1,15 @@
+{#ma page new herite de la pg parent #}
+{% extends 'navbar.html.twig' %}
+{#je boostrape mon uniquement mon form #}
+{% form_theme monFormulaire 'bootstrap_4_layout.html.twig' %}
+{% block stylesheets %}
+{{ parent() }}
+<link href="{{asset('/css/style.css')}}" rel="stylesheet" media="all">
+{% endblock %}
+{% block contenuPrincipal %}
+{#j'ajoute a mon contenu de la pg parent le form #}
+{{ parent() }}
+            {{ form(monFormulaire) }}
+            
+        {% endblock %}
+        
